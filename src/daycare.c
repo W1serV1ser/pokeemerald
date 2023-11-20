@@ -1299,4 +1299,10 @@ void ChooseSendDaycareMon(void)
 {
     ChooseMonForDaycare();
     gMain.savedCallback = CB2_ReturnToField;
+    
+    if(gSaveBlock2Ptr->follower.inProgress && gSpecialVar_0x8004 == 0)
+    {
+        // Need to indicate that lead follower was just placed in daycare, so follower sprite needs to be updated to the second valid mon
+        gSpecialVar_Unused_0x8014 = 2;
+    }
 }

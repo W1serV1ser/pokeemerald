@@ -1557,6 +1557,31 @@ u8 GetLeadMonNotFaintedIndex(void)
     return 0;
 }
 
+// Finds the second mon that's not fainted in the player's party
+u8 GetSecondLeadMonNotFaintedIndex(void)
+{
+    u8 i;
+    u8 partyCount = CalculatePlayerPartyCount();
+    for(i = 0; i < partyCount; i++)
+    {
+        // Once the first mon is found, continue the search for the second
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_EGG && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) != 0
+            && GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) != 0)
+        {
+            for(i = i; i < partyCount; i++)
+            {
+                if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) != SPECIES_EGG && GetMonData(&gPlayerParty[i], MON_DATA_SPECIES_OR_EGG, NULL) != 0
+                    && GetMonData(&gPlayerParty[i], MON_DATA_HP, NULL) != 0)
+                {
+                    return i;    
+                }
+            }
+            break;
+        }
+    }
+    return 0;
+}
+
 u16 ScriptGetPartyMonSpecies(void)
 {
     return GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_SPECIES_OR_EGG, NULL);
