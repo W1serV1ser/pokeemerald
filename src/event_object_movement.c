@@ -10711,7 +10711,7 @@ u8 MovementAction_FollowingPokemon_Shrink_Step1(struct ObjectEvent *objectEvent,
     {
         FreeSpriteOamMatrix(sprite);
         gObjectEvents[gPlayerAvatar.objectEventId].fixedPriority = FALSE;
-        gPlayerAvatar.preventStep = FALSE;
+        UnlockPlayerFieldControls();
         objectEvent->invisible = TRUE;
         sprite->data[2]++;
     }
@@ -10846,7 +10846,7 @@ u8 MovementAction_FollowingPokemon_Grow_Step1(struct ObjectEvent *objectEvent, s
             objectEvent->inShallowFlowingWater = TRUE;
             StartFieldEffectForObjectEvent(FLDEFF_FEET_IN_FLOWING_WATER, objectEvent);
         }
-        gPlayerAvatar.preventStep = FALSE;
+        UnlockPlayerFieldControls();
         
         // Account for warps in scripts where the follower needs to pop out of a pokeball afterwards
         if (gSaveBlock2Ptr->follower.createSurfBlob == 2)
