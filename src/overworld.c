@@ -2172,11 +2172,6 @@ void CB2_Overworld(void)
                 gSprites[gObjectEvents[gSaveBlock2Ptr->follower.objId].spriteId].x2 = 8;
                 break;
         }
-        
-        // This is mainly necessary to account for when the lead mon is deposited at a daycare.
-        // For some reason, adding a conditional to check if gSpecialVar_Unused_0x8014 == 2 doesn't work,
-        // so this has to run every time. I don't think there are any issues with that, it's just less effecient.
-        UpdateFollowerPokemonGraphic();
     }
 }
 
@@ -3928,20 +3923,8 @@ void UpdateFollowerPokemonGraphic(void)
 {
     // Loaded in case the player changed the species of the Pokemon in the lead of the party.
     // If so, the following Pokemon needs to change.
-    u16 leadMonGraphicId;
-    u8 leadMonIndex;
+    u16 leadMonGraphicId = GetMonData(&gPlayerParty[GetLeadMonNotFaintedIndex()], MON_DATA_SPECIES, NULL) + OBJ_EVENT_GFX_BULBASAUR - 1;
     struct ObjectEvent *follower = &gObjectEvents[gSaveBlock2Ptr->follower.objId];
-    
-    // Look for the second mon in the team that is not fainted
-    if(gSpecialVar_Unused_0x8014 == 2)
-    {
-        leadMonIndex = GetSecondLeadMonNotFaintedIndex();
-        gSpecialVar_Unused_0x8014 = 1;
-    }
-    else
-        leadMonIndex = GetLeadMonNotFaintedIndex();
-    
-    leadMonGraphicId = GetMonData(&gPlayerParty[leadMonIndex], MON_DATA_SPECIES, NULL) + OBJ_EVENT_GFX_BULBASAUR - 1;
 
     if(gSaveBlock2Ptr->follower.inProgress && leadMonGraphicId != gSaveBlock2Ptr->follower.graphicsId)
     {
