@@ -1751,6 +1751,11 @@
 	.byte 0xe6
 	.endm
 
+	@ checks if the follower is visible. returns the result to VAR_RESULT. FALSE if you have no follower or if follower is invisible, TRUE otherwise
+	.macro isfollowervisible
+	.byte 0xe7
+	.endm
+
 
 @ Supplementary
 

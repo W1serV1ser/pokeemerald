@@ -99,6 +99,7 @@ Route117_PokemonDayCare_EventScript_GiveMonToRaise::
 	goto_if_eq VAR_RESULT, 0, Route117_PokemonDayCare_EventScript_OnlyOneAliveMon
 	specialvar VAR_0x8005, GetSelectedMonNicknameAndSpecies
 	waitse
+	call_if_eq VAR_0x8004, 0, Route117_EventScript_CheckFollowerVisibility
 	playmoncry VAR_0x8005, CRY_MODE_NORMAL
 	msgbox Route117_PokemonDayCare_Text_WellRaiseYourMon, MSGBOX_DEFAULT
 	waitmoncry
@@ -109,6 +110,16 @@ Route117_PokemonDayCare_EventScript_GiveMonToRaise::
 	goto_if_eq VAR_RESULT, DAYCARE_ONE_MON, Route117_PokemonDayCare_EventScript_CanRaiseOneMore
 	release
 	end
+
+Route117_EventScript_CheckFollowerVisibility::
+	isfollowervisible
+	call_if_eq VAR_RESULT, TRUE, Route117_EventScript_FollowerIntoPokeball
+	return
+
+Route117_EventScript_FollowerIntoPokeball::
+	applymovement OBJ_EVENT_ID_FOLLOWER, Common_Movement_ShrinkPokemon
+	waitmovement 0
+	return
 
 Route117_PokemonDayCare_EventScript_ComeAgain::
 	msgbox Route117_PokemonDayCare_Text_ComeAgain, MSGBOX_DEFAULT

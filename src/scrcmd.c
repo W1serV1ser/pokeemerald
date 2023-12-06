@@ -2381,3 +2381,9 @@ bool8 ScrCmd_checkfollower(struct ScriptContext *ctx)
     CheckPlayerHasFollower();
     return FALSE;
 }
+
+bool8 ScrCmd_isfollowervisible(struct ScriptContext *ctx)
+{
+    gSpecialVar_Result = gSaveBlock2Ptr->follower.inProgress && !gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible;
+    return FALSE;
+}
