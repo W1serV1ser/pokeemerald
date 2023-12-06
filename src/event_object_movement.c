@@ -10329,17 +10329,20 @@ void RecreateObjectEvent(struct ObjectEvent *objectEvent, struct Sprite *sprite)
 {
     u8 newSpriteId;
     struct ObjectEventTemplate clone;
-    struct ObjectEvent backupFollower = *objectEvent;
-    backupFollower.graphicsId = objectEvent->graphicsId;
+    struct ObjectEvent backupObject = *objectEvent;
+    backupObject.graphicsId = objectEvent->graphicsId;
     DestroySprite(sprite);
     RemoveObjectEvent(objectEvent);
 
     clone = *GetObjectEventTemplateByLocalIdAndMap(objectEvent->localId, objectEvent->mapNum, objectEvent->mapGroup);
     clone.graphicsId = objectEvent->graphicsId;
+    
+    if(gSaveBlock2Ptr->follower.inProgress && &backupObject == &gObjectEvents[gSaveBlock2Ptr->follower.objId])
+        clone.localId = 254;
 
     objectEvent = &gObjectEvents[TrySpawnObjectEventTemplate(&clone, objectEvent->mapNum, objectEvent->mapGroup, clone.x, clone.y)];
     newSpriteId = objectEvent->spriteId;
-    *objectEvent = backupFollower;
+    *objectEvent = backupObject;
     objectEvent->spriteId = newSpriteId;
 }
 
