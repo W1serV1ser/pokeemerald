@@ -983,7 +983,6 @@ void GetOnOffBike(u8 transitionFlags)
     }
     else
     {
-        gSaveBlock2Ptr->follower.delayedState = 0;
         FollowerIntoPokeball();
         
         SetPlayerAvatarTransitionFlags(transitionFlags);

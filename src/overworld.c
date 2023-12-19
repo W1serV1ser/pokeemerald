@@ -4470,6 +4470,7 @@ void FollowerIntoPokeball(void)
 {
     if (gObjectEvents[gSaveBlock2Ptr->follower.objId].invisible == FALSE && gSaveBlock2Ptr->follower.inProgress)
     {
+        gSaveBlock2Ptr->follower.delayedState = 0;
         gSaveBlock2Ptr->follower.comeOutDoorStairs = 0;
         LockPlayerFieldControls();
         ObjectEventForceSetHeldMovement(&gObjectEvents[gSaveBlock2Ptr->follower.objId], MOVEMENT_ACTION_FOLLOWING_POKEMON_SHRINK);
