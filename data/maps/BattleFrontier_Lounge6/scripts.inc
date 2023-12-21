@@ -24,6 +24,7 @@ BattleFrontier_Lounge6_EventScript_Trader::
 	special CreateInGameTradePokemon
 	special DoInGameTradeScene
 	waitstate
+	updatefollowerpokemongraphic
 	msgbox BattleFrontier_Lounge6_Text_PromiseIllBeGoodToIt, MSGBOX_DEFAULT
 	setflag FLAG_BATTLE_FRONTIER_TRADE_DONE
 	release

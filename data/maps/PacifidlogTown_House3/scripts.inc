@@ -24,6 +24,7 @@ PacifidlogTown_House3_EventScript_Trader::
 	special CreateInGameTradePokemon
 	special DoInGameTradeScene
 	waitstate
+	updatefollowerpokemongraphic
 	bufferspeciesname STR_VAR_1, VAR_0x8009
 	msgbox PacifidlogTown_House3_Text_ItsSubtlyDifferentThankYou, MSGBOX_DEFAULT
 	setflag FLAG_PACIFIDLOG_NPC_TRADE_COMPLETED

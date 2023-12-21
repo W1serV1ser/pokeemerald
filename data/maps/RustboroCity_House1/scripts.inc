@@ -24,6 +24,7 @@ RustboroCity_House1_EventScript_Trader::
 	special CreateInGameTradePokemon
 	special DoInGameTradeScene
 	waitstate
+	updatefollowerpokemongraphic
 	msgbox RustboroCity_House1_Text_PleaseBeGoodToMyPokemon, MSGBOX_DEFAULT
 	setflag FLAG_RUSTBORO_NPC_TRADE_COMPLETED
 	release

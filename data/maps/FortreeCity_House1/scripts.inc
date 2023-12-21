@@ -24,6 +24,7 @@ FortreeCity_House1_EventScript_Trader::
 	special CreateInGameTradePokemon
 	special DoInGameTradeScene
 	waitstate
+	updatefollowerpokemongraphic
 	bufferspeciesname STR_VAR_1, VAR_0x8009
 	msgbox FortreeCity_House1_Text_MonYouTakeCare, MSGBOX_DEFAULT
 	setflag FLAG_FORTREE_NPC_TRADE_COMPLETED
