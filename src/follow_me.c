@@ -236,6 +236,9 @@ void FollowMe(struct ObjectEvent* npc, u8 state, bool8 ignoreScriptActive)
     else if (ArePlayerFieldControlsLocked() && !ignoreScriptActive)
         return; //Don't follow during a script
                 
+    // Indicator that we may be dealing with the bike-bump glitch
+    if(state >= 0x19 && state <= 0x1C)
+        gSaveBlock2Ptr->follower.flags |= 0x200;
     
     // fix post-surf jump
     if ((gSaveBlock2Ptr->follower.currentSprite == FOLLOWER_SPRITE_INDEX_SURF) && !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING) && follower->fieldEffectSpriteId == 0)
