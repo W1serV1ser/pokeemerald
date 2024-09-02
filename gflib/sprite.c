@@ -969,76 +969,26 @@ void ContinueAnim(struct Sprite *sprite)
     }
 }
 
-bool8 IsFlyingPokemonGraphic(u16 graphicsId)
-{
-    switch(graphicsId)
-    {
-        case OBJ_EVENT_GFX_BUTTERFREE:
-        case OBJ_EVENT_GFX_BEEDRILL:
-        case OBJ_EVENT_GFX_PIDGEOTTO:
-        case OBJ_EVENT_GFX_PIDGEOT:
-        case OBJ_EVENT_GFX_FEAROW:
-        case OBJ_EVENT_GFX_ZUBAT:
-        case OBJ_EVENT_GFX_GOLBAT:
-        case OBJ_EVENT_GFX_VENOMOTH:
-        case OBJ_EVENT_GFX_AERODACTYL:
-        case OBJ_EVENT_GFX_ARTICUNO:
-        case OBJ_EVENT_GFX_ZAPDOS:
-        case OBJ_EVENT_GFX_MOLTRES:
-        case OBJ_EVENT_GFX_DRAGONITE:
-        case OBJ_EVENT_GFX_NOCTOWL:
-        case OBJ_EVENT_GFX_LEDYBA:
-        case OBJ_EVENT_GFX_LEDIAN:
-        case OBJ_EVENT_GFX_CROBAT:
-        case OBJ_EVENT_GFX_TOGETIC:
-        case OBJ_EVENT_GFX_HOPPIP:
-        case OBJ_EVENT_GFX_SKIPLOOM:
-        case OBJ_EVENT_GFX_JUMPLUFF:
-        case OBJ_EVENT_GFX_YANMA:
-        case OBJ_EVENT_GFX_MANTINE:
-        case OBJ_EVENT_GFX_SKARMORY:
-        case OBJ_EVENT_GFX_LUGIA_FOLLOWER:
-        case OBJ_EVENT_GFX_HOOH_FOLLOWER:
-        case OBJ_EVENT_GFX_CELEBI:
-        case OBJ_EVENT_GFX_BEAUTIFLY:
-        case OBJ_EVENT_GFX_DUSTOX:
-        case OBJ_EVENT_GFX_SWELLOW:
-        case OBJ_EVENT_GFX_WINGULL_FOLLOWER:
-        case OBJ_EVENT_GFX_PELIPPER:
-        case OBJ_EVENT_GFX_MASQUERAIN:
-        case OBJ_EVENT_GFX_FLYGON:
-        case OBJ_EVENT_GFX_SWABLU:
-        case OBJ_EVENT_GFX_ALTARIA:
-        case OBJ_EVENT_GFX_VOLBEAT:
-        case OBJ_EVENT_GFX_ILLUMISE:
-        case OBJ_EVENT_GFX_KYOGRE:
-        case OBJ_EVENT_GFX_LATIAS_FOLLOWER:
-        case OBJ_EVENT_GFX_LATIOS_FOLLOWER:
-            return TRUE;
-        default:
-            return FALSE;
-    }
-}
-
 void AnimCmd_frame(struct Sprite *sprite)
 {
     s16 imageValue;
     u8 duration;
     u8 hFlip;
     u8 vFlip;
+    u8 bounce;
 
     imageValue = sprite->anims[sprite->animNum][sprite->animCmdIndex].frame.imageValue;
     duration = sprite->anims[sprite->animNum][sprite->animCmdIndex].frame.duration;
     hFlip = sprite->anims[sprite->animNum][sprite->animCmdIndex].frame.hFlip;
     vFlip = sprite->anims[sprite->animNum][sprite->animCmdIndex].frame.vFlip;
+    bounce = sprite->anims[sprite->animNum][sprite->animCmdIndex].frame.bounce;
 
     if (duration)
         duration--;
 
     sprite->animDelayCounter = duration;
 
-    if(sprite == &gSprites[gObjectEvents[gSaveBlock2Ptr->follower.objId].spriteId] && gSaveBlock2Ptr->follower.inProgress && sprite->y2 >= -1
-    && !IsFlyingPokemonGraphic(gObjectEvents[gSaveBlock2Ptr->follower.objId].graphicsId) && !sprite->oam.affineMode)
+    if(bounce && sprite->y2 >= -1 && !sprite->oam.affineMode)
     {
         if(sprite->animCmdIndex % 2 == 1)
             sprite->y2 = 0;
@@ -1067,6 +1017,7 @@ void AnimCmd_jump(struct Sprite *sprite)
     u8 duration;
     u8 hFlip;
     u8 vFlip;
+    u8 bounce;
 
     sprite->animCmdIndex = sprite->anims[sprite->animNum][sprite->animCmdIndex].jump.target;
 
@@ -1074,14 +1025,14 @@ void AnimCmd_jump(struct Sprite *sprite)
     duration = sprite->anims[sprite->animNum][sprite->animCmdIndex].frame.duration;
     hFlip = sprite->anims[sprite->animNum][sprite->animCmdIndex].frame.hFlip;
     vFlip = sprite->anims[sprite->animNum][sprite->animCmdIndex].frame.vFlip;
+    bounce = sprite->anims[sprite->animNum][sprite->animCmdIndex].frame.bounce;
 
     if (duration)
         duration--;
 
     sprite->animDelayCounter = duration;
     
-    if(sprite == &gSprites[gObjectEvents[gSaveBlock2Ptr->follower.objId].spriteId] && gSaveBlock2Ptr->follower.inProgress && sprite->y2 >= -1
-    && !IsFlyingPokemonGraphic(gObjectEvents[gSaveBlock2Ptr->follower.objId].graphicsId) && !sprite->oam.affineMode)
+    if(bounce && sprite->y2 >= -1 && !sprite->oam.affineMode)
     {
         if(sprite->animCmdIndex % 2 == 1)
             sprite->y2 = 0;

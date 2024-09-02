@@ -2075,6 +2075,24 @@ $(OBJEVENTGFXDIR)/pokemon/followers/shaymin_sky.4bpp: %.4bpp: %.png
     
 $(OBJEVENTGFXDIR)/pokemon/followers/arceus.4bpp: %.4bpp: %.png
 	$(GFX) $< $@ -mwidth 8 -mheight 8
+    
+$(OBJEVENTGFXDIR)/pokemon/followers/victini.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+    
+$(OBJEVENTGFXDIR)/pokemon/followers/snivy.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+    
+$(OBJEVENTGFXDIR)/pokemon/followers/servine.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+    
+$(OBJEVENTGFXDIR)/pokemon/followers/serperior.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+    
+$(OBJEVENTGFXDIR)/pokemon/followers/tepig.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
+    
+$(OBJEVENTGFXDIR)/pokemon/followers/pignite.4bpp: %.4bpp: %.png
+	$(GFX) $< $@ -mwidth 4 -mheight 4
 
 
 

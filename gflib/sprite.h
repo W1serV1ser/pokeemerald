@@ -53,6 +53,7 @@ struct AnimFrameCmd
     u32 duration:6;
     u32 hFlip:1;
     u32 vFlip:1;
+    u32 bounce:1;
 };
 
 struct AnimLoopCmd

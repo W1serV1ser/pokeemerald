@@ -996,6 +996,12 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_TAG_ARCEUS_ROCK             0xFA8
 #define OBJ_EVENT_PAL_TAG_ARCEUS_STEEL            0xFA7
 #define OBJ_EVENT_PAL_TAG_ARCEUS_WATER            0xFA6
+#define OBJ_EVENT_PAL_TAG_VICTINI                 0xFA5
+#define OBJ_EVENT_PAL_TAG_SNIVY                   0xFA4
+#define OBJ_EVENT_PAL_TAG_SERVINE                 0xFA3
+#define OBJ_EVENT_PAL_TAG_SERPERIOR               0xFA2
+#define OBJ_EVENT_PAL_TAG_TEPIG                   0xFA1
+#define OBJ_EVENT_PAL_TAG_PIGNITE                 0xFA0
 #define OBJ_EVENT_PAL_TAG_NONE                    0x11FF
 
 #include "data/field_effects/field_effect_object_template_pointers.h"
@@ -1590,6 +1596,12 @@ static const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPal_Arceus_Rock,           OBJ_EVENT_PAL_TAG_ARCEUS_ROCK},
     {gObjectEventPal_Arceus_Steel,          OBJ_EVENT_PAL_TAG_ARCEUS_STEEL},
     {gObjectEventPal_Arceus_Water,          OBJ_EVENT_PAL_TAG_ARCEUS_WATER},
+    {gObjectEventPal_Victini,               OBJ_EVENT_PAL_TAG_VICTINI},
+    {gObjectEventPal_Snivy,                 OBJ_EVENT_PAL_TAG_SNIVY},
+    {gObjectEventPal_Servine,               OBJ_EVENT_PAL_TAG_SERVINE},
+    {gObjectEventPal_Serperior,             OBJ_EVENT_PAL_TAG_SERPERIOR},
+    {gObjectEventPal_Tepig,                 OBJ_EVENT_PAL_TAG_TEPIG},
+    {gObjectEventPal_Pignite,               OBJ_EVENT_PAL_TAG_PIGNITE},
     #ifdef BUGFIX
     {NULL,                                  OBJ_EVENT_PAL_TAG_NONE}, 
 #else

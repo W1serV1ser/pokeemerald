@@ -822,6 +822,12 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Arceus_Psyc
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Arceus_Rock;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Arceus_Steel;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Arceus_Water;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Victini;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Snivy;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Servine;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Serperior;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Tepig;
+extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Pignite;
 
 const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM_OBJ_EVENT_GFX] = {
     [OBJ_EVENT_GFX_BRENDAN_NORMAL] =           &gObjectEventGraphicsInfo_BrendanNormal,
@@ -1582,6 +1588,12 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_DARKRAI] =                  &gObjectEventGraphicsInfo_Darkrai,
     [OBJ_EVENT_GFX_SHAYMIN_LAND] =             &gObjectEventGraphicsInfo_Shaymin_Land,
     [OBJ_EVENT_GFX_ARCEUS_NORMAL] =            &gObjectEventGraphicsInfo_Arceus_Normal,
+    [OBJ_EVENT_GFX_VICTINI] =                  &gObjectEventGraphicsInfo_Victini,
+    [OBJ_EVENT_GFX_SNIVY] =                    &gObjectEventGraphicsInfo_Snivy,
+    [OBJ_EVENT_GFX_SERVINE] =                  &gObjectEventGraphicsInfo_Servine,
+    [OBJ_EVENT_GFX_SERPERIOR] =                &gObjectEventGraphicsInfo_Serperior,
+    [OBJ_EVENT_GFX_TEPIG] =                    &gObjectEventGraphicsInfo_Tepig,
+    [OBJ_EVENT_GFX_PIGNITE] =                  &gObjectEventGraphicsInfo_Pignite,
 };
 
 const struct ObjectEventGraphicsInfo *const gMauvilleOldManGraphicsInfoPointers[] = {

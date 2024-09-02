@@ -763,8 +763,14 @@
 #define OBJ_EVENT_GFX_DARKRAI                    754
 #define OBJ_EVENT_GFX_SHAYMIN_LAND               755
 #define OBJ_EVENT_GFX_ARCEUS_NORMAL              756
+#define OBJ_EVENT_GFX_VICTINI                    757
+#define OBJ_EVENT_GFX_SNIVY                      758
+#define OBJ_EVENT_GFX_SERVINE                    759
+#define OBJ_EVENT_GFX_SERPERIOR                  760
+#define OBJ_EVENT_GFX_TEPIG                      761
+#define OBJ_EVENT_GFX_PIGNITE                    762
 
-#define OBJ_EVENT_GFX_EXPANDING_SPARKLE          757
+#define OBJ_EVENT_GFX_EXPANDING_SPARKLE          763
 
 #else
 // There are no OLD_UNOWN constants in the pokemon_expansion, and the species constants are reordered
@@ -1011,36 +1017,42 @@
 #define OBJ_EVENT_GFX_DARKRAI                    729
 #define OBJ_EVENT_GFX_SHAYMIN_LAND               730
 #define OBJ_EVENT_GFX_ARCEUS_NORMAL              731
+#define OBJ_EVENT_GFX_VICTINI                    732
+#define OBJ_EVENT_GFX_SNIVY                      733
+#define OBJ_EVENT_GFX_SERVINE                    734
+#define OBJ_EVENT_GFX_SERPERIOR                  735
+#define OBJ_EVENT_GFX_TEPIG                      736
+#define OBJ_EVENT_GFX_PIGNITE                    737
 
-#define OBJ_EVENT_GFX_GREAT_BALL                 732
-#define OBJ_EVENT_GFX_ULTRA_BALL                 733
-#define OBJ_EVENT_GFX_MASTER_BALL                734
-#define OBJ_EVENT_GFX_SAFARI_BALL                735
-#define OBJ_EVENT_GFX_NET_BALL                   736
-#define OBJ_EVENT_GFX_DIVE_BALL                  737
-#define OBJ_EVENT_GFX_NEST_BALL                  738
-#define OBJ_EVENT_GFX_REPEAT_BALL                739
-#define OBJ_EVENT_GFX_TIMER_BALL                 740
-#define OBJ_EVENT_GFX_LUXURY_BALL                741
-#define OBJ_EVENT_GFX_PREMIER_BALL               742
-#define OBJ_EVENT_GFX_HEAL_BALL                  743
-#define OBJ_EVENT_GFX_DUSK_BALL                  744
-#define OBJ_EVENT_GFX_QUICK_BALL                 745
-#define OBJ_EVENT_GFX_LEVEL_BALL                 746
-#define OBJ_EVENT_GFX_LURE_BALL                  747
-#define OBJ_EVENT_GFX_MOON_BALL                  748
-#define OBJ_EVENT_GFX_FRIEND_BALL                749
-#define OBJ_EVENT_GFX_LOVE_BALL                  750
-#define OBJ_EVENT_GFX_FAST_BALL                  751
-#define OBJ_EVENT_GFX_HEAVY_BALL                 752
-#define OBJ_EVENT_GFX_DREAM_BALL                 753
-#define OBJ_EVENT_GFX_SPORT_BALL                 754
-#define OBJ_EVENT_GFX_PARK_BALL                  755
-#define OBJ_EVENT_GFX_CHERISH_BALL               756
-#define OBJ_EVENT_GFX_EXPANDING_SPARKLE          757
+#define OBJ_EVENT_GFX_GREAT_BALL                 738
+#define OBJ_EVENT_GFX_ULTRA_BALL                 739
+#define OBJ_EVENT_GFX_MASTER_BALL                740
+#define OBJ_EVENT_GFX_SAFARI_BALL                741
+#define OBJ_EVENT_GFX_NET_BALL                   742
+#define OBJ_EVENT_GFX_DIVE_BALL                  743
+#define OBJ_EVENT_GFX_NEST_BALL                  744
+#define OBJ_EVENT_GFX_REPEAT_BALL                745
+#define OBJ_EVENT_GFX_TIMER_BALL                 746
+#define OBJ_EVENT_GFX_LUXURY_BALL                747
+#define OBJ_EVENT_GFX_PREMIER_BALL               748
+#define OBJ_EVENT_GFX_HEAL_BALL                  749
+#define OBJ_EVENT_GFX_DUSK_BALL                  750
+#define OBJ_EVENT_GFX_QUICK_BALL                 751
+#define OBJ_EVENT_GFX_LEVEL_BALL                 752
+#define OBJ_EVENT_GFX_LURE_BALL                  753
+#define OBJ_EVENT_GFX_MOON_BALL                  754
+#define OBJ_EVENT_GFX_FRIEND_BALL                755
+#define OBJ_EVENT_GFX_LOVE_BALL                  756
+#define OBJ_EVENT_GFX_FAST_BALL                  757
+#define OBJ_EVENT_GFX_HEAVY_BALL                 758
+#define OBJ_EVENT_GFX_DREAM_BALL                 759
+#define OBJ_EVENT_GFX_SPORT_BALL                 760
+#define OBJ_EVENT_GFX_PARK_BALL                  761
+#define OBJ_EVENT_GFX_CHERISH_BALL               762
+#define OBJ_EVENT_GFX_EXPANDING_SPARKLE          763
 #endif
 
-#define NUM_OBJ_EVENT_GFX                        758
+#define NUM_OBJ_EVENT_GFX                        764
 
 // These are dynamic object gfx ids.
 // They correspond with the values of the VAR_OBJ_GFX_ID_X vars.
